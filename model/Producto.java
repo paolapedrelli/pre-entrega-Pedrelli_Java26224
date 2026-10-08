@@ -79,4 +79,12 @@ public class Producto {
                 " | Stock: " + stock +
                 " | Categoría: " + categoria;
     }
+
+    public void mostrar() {
+        System.out.println("ID: " + id +
+                " | " + nombre +
+                " | $" + precio +
+                " | Stock: " + stock +
+                " | Categoría: " + categoria);
+    }
 }
