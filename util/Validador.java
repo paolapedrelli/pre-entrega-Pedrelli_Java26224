@@ -5,13 +5,7 @@ import java.util.Scanner;
 
 import exception.StockInsuficienteException;
 
-/*
-    Clase con métodos de validación reutilizables.
-    Todos los metodos son estáticos: no necesitamos crear una instancia de Validador para usarlos.Se invocan directamente 
 
-    
-
-*/
 
 public class Validador {
     // Validaciones de datos del producto
@@ -47,8 +41,7 @@ public class Validador {
         }
     }
 
-    // Lectura por consola
-    // 
+    
 
     public static int leerEntero(Scanner sc , String mensaje){
         // bucle infinito que se rompe cuando el usuario ingresa un entero valido.
@@ -59,7 +52,7 @@ public class Validador {
                 sc.nextLine(); // limpia el salto de línea pendiente
                 return valor;
             } catch (InputMismatchException e) {
-                System.out.println("Debe ingresar un número entero.Intente nuevamente.");
+                System.out.println("Debe ingresar un número entero. Intente nuevamente.");
                 sc.nextLine(); // limpia el salto de línea pendiente
             }
         }
@@ -73,7 +66,7 @@ public class Validador {
                 sc.nextLine();
                 return valor;
             } catch (Exception e) {
-                System.out.println("Debe ingresar un número decimal.(coma o punto");
+                System.out.println("Debe ingresar un número decimal. (Coma o punto)");
                 sc.nextLine();
             }
         }

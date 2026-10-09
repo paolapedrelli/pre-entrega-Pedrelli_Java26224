@@ -27,7 +27,7 @@ public Pedido crearPedido() {
     pedido.setId(contadorId);
     contadorId++;
 
-    pedidos.add(pedido);
+    
 
     return pedido;
 }
@@ -55,6 +55,11 @@ public void agregarProducto (Pedido pedido, int idProducto, int cantidad) {
 
 public void confirmarPedido(Pedido pedido) {
 
+    if (pedido.getDetalles().isEmpty()) {
+
+        throw new IllegalArgumentException("No se puede confirmar un pedido sin productos.");
+    }
+
     for (DetallePedido detalle : pedido.getDetalles()) {
 
         Producto producto = detalle.getProducto();
@@ -63,6 +68,8 @@ public void confirmarPedido(Pedido pedido) {
 
         producto.setStock(producto.getStock() - cantidad);
     }
+
+    pedidos.add(pedido);
 }
 
 public List<Pedido> listarTodos() {
